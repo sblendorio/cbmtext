@@ -73,13 +73,13 @@ Commodore MPS 803 is a **80 columns** printer, so the text lines will be broken 
 To print an international text on a CBM MPS 803, we have to mix text mode (for symbols already present in printer's ROM) and graphics mode (for **all** the other symbols). Those *new* symbols have been implemented as dot-matrix definitions in the header file [**chardefs.h**](https://github.com/sblendorio/cbmtext/blob/master/source/chardefs.h), in that way:
 ```
 {L'á', {
-  0b001100,     ..**..
-  0b000000,     ......
-  0b011000,     .**...
-  0b000100,     ...*..
-  0b011100,     .***..
-  0b100100,     *..*..
-  0b011010 }},  .**.*.
+  0b001100,     // ..@@..
+  0b000000,     // ......
+  0b011000,     // .@@...
+  0b000100,     // ...@..
+  0b011100,     // .@@@..
+  0b100100,     // @..@..
+  0b011010 }},  // .@@.@.
 ```
 Literal binary constants are exactly the 6x7 human-readable bitmap representing the character (1 is for black, 0 for white). If for a particular glyph, a pre-defined character could be used, the syntax is the following:
 ```
