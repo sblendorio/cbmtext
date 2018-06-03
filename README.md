@@ -43,10 +43,10 @@ An executable file named **"cbmtext"** will be generated: it's ready to use.
 ## Using ***cbmtext***
 
 Synopsis:
-
-`cbmage <text file name>`
-`cbmage -`
-
+```
+cbmage <text file name>
+cbmage -
+```
 This is the basic syntax: it will simply read from the text file name (first case), or from standard input (second case, giving "-" as parameter) writing on *stdout* (so, the termainal window) the raw bytes that should be interpreted by the **MPS 803** printer. The input stream (file on disk or standard input) **must** be **UTF-8** encoded. The output must be redirected to the printer: let's see how.
 
 ## Let's use it with ***opencbm***
