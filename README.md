@@ -1,5 +1,5 @@
 # cbmtext 0.1
-Print a Unicode UTF-8 encoded textfile from a modern PC with an old-fashioned **Commodore MPS 803** compatible printer
+Print a Unicode UTF-8 encoded textfile from a modern PC with an old-fashioned **Commodore MPS 803** compatible printer.
 ## Purpose
 This utility outputs raw bytes for printing Unicode texts (UTF-8 encoded) on a [Commodore MPS 803](http://www.zimmers.net/cbmpics/p6serial3.html) compatible printer. It should be used with [**opencbm**](http://spiro.trikaliotis.net/opencbm) package by [Spiro Trikaliotis](http://spiro.trikaliotis.net/) to redirect the output to the printer, connected through a [XUM1541 cable](https://rdist.root.org/2009/01/21/introducing-xum1541-the-fast-c64-floppy-usb-adapter/), such as [ZoomFloppy](http://www.go4retro.com/products/zoomfloppy/).
 
@@ -70,18 +70,18 @@ In particular, the **4th line** (`./cbmtext sample.txt | cbmctrl write`) produce
 Commodore MPS 803 is a **80 columns** printer, so the text lines will be broken at the 80th character. Currently there is no *word wrap* function in *cbmtext*, so you have to word-wrap the text before sending it to the printer, i.e. with the **fold** Unix command:
 
     $ cat sample.txt | fold -w 80 | ./cbmtext - | cbmctrl write
-
+    
 ## Details: character definitions
 To print an international text on a CBM MPS 803, we have to mix text mode (for symbols already present in printer's ROM) and graphics mode (for **all** the other symbols). Those *new* symbols have been implemented as dot-matrix definitions in the header file [**chardefs.h**](https://github.com/sblendorio/cbmtext/blob/master/source/chardefs.h), in that way:
 ```
 {L'á', {
-  0b001100,     // ..@@..
+  0b001100,     // ..██..
   0b000000,     // ......
-  0b011000,     // .@@...
-  0b000100,     // ...@..
-  0b011100,     // .@@@..
-  0b100100,     // @..@..
-  0b011010 }},  // .@@.@.
+  0b011000,     // .██...
+  0b000100,     // ...█..
+  0b011100,     // .███..
+  0b100100,     // █..█..
+  0b011010 }},  // .██.█.
 ```
 Literal binary constants are exactly the 6x7 human-readable bitmap representing the character (1 is for black, 0 for white). If for a particular glyph, a pre-defined character could be used, the syntax is the following:
 ```
@@ -92,20 +92,19 @@ It's the case of **rho** lowercase greek letter. It's similar to a latin lowerca
 So, by editing the header file [**chardefs.h**](https://github.com/sblendorio/cbmtext/blob/master/source/chardefs.h) you can add or modify the definitions the dot matrix related to each Unicode character. If a character is not yet coded, it will be printed as *unknow glyph* symbol "□", also defined in the same file:
 ```
 static list<char> missing_glyph = {
-  0b111110,
-  0b100010,
-  0b100010,
-  0b100010,
-  0b100010,
-  0b100010,
-  0b111110
+  0b111110,     // █████.
+  0b100010,     // █...█.
+  0b100010,     // █...█.
+  0b100010,     // █...█.
+  0b100010,     // █...█.
+  0b100010,     // █...█.
+  0b111110      // █████.
 };
 ```
-
 ## Credits
 Thanks to [**Spiro Trikaliotis**](http://spiro.trikaliotis.net/) for the [opencbm package](http://spiro.trikaliotis.net/opencbm), to [**Till Harbaum**](http://spiro.trikaliotis.net/xu1541) for the initial case study of the [XU1541](http://spiro.trikaliotis.net/xu1541) (and also for the fantastic [MIST](http://harbaum.org/till/mist/index.shtml)) and to **ntrifunovic** for the useful [UTF8-CPP library](http://utfcpp.sourceforge.net/) library.
 
-## Sample printed **PNG** files
+## Sample printed text file
 ![MPS 803 - 1](http://www.sblendorio.eu/images/mpstext10.jpg)
 ![MPS 803 - 2](http://www.sblendorio.eu/images/mpstext11.jpg)
 ![MPS 803 - 3](http://www.sblendorio.eu/images/mpstext12.jpg)
