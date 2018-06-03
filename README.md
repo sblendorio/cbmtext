@@ -49,7 +49,7 @@ Synopsis:
 cbmage <text file name>
 cbmage -
 ```
-This is the basic syntax: it will read the text file name (first case), or from standard input (second case, giving "-" as parameter) writing on *standard output* (so, the terminal window) the raw bytes that should be interpreted by the **MPS 803** printer.
+This is the basic syntax: it will read the text file (first case), or from standard input (second case, giving "-" as parameter) writing on *standard output* (so, the terminal window) the raw bytes that should be interpreted by the **MPS 803** printer.
 
 The input stream (file on disk or standard input) **must** be **UTF-8** encoded. The output must be redirected to the printer: let's see how.
 
@@ -66,7 +66,7 @@ The typical sequence of command you should use to do the task is:
 In particular, the **4th line** (`./cbmtext sample.txt | cbmctrl write`) produces the raw bytes (launch it **without "./"** if you run it **on Windows**), which are redirected to the printer through the piped `cbmctrl write` command.
 
 ## Restrictions
-Commodore MPS 803 is a **80 columns** printer, so the text lines will be broken at the 80th character. Currently there is no *word wrap* function in *cbmtext*, so you have to word-wrap the text before sending it to the printer, i.e. with the **fold** Unix command:
+Commodore MPS 803 is an **80 columns** printer, so the text lines will be broken at the 80th character. Currently there is no *word wrap* function in *cbmtext*, so you have to word-wrap the text before sending it to the printer, i.e. with the **fold** Unix command:
 
     $ cat sample.txt | fold -w 80 | ./cbmtext - | cbmctrl write
     
