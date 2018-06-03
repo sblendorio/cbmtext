@@ -89,7 +89,7 @@ Literal binary constants are exactly the 6x7 human-readable bitmap representing 
 ```
 It's the case of **rho** lowercase greek letter. It's similar to a latin lowercase **p**, so it can be inserted as a *single-character* replacement. But we replaced it apparently with an **uppercase** "P": that's because *PETSCII* charset, used by MPS 803, has *swapped* lowercase and uppercase letters.
 
-So, by editing the header file [**chardefs.h**](https://github.com/sblendorio/cbmtext/blob/master/source/chardefs.h) you can add or modify the definitions the dot matrix related to each Unicode character. If a character is not yet coded, it will be printed as *unknow glyph* symbol "□", also defined in the same file:
+So, by editing the header file [**chardefs.h**](https://github.com/sblendorio/cbmtext/blob/master/source/chardefs.h) you can add or modify the definitions the dot matrix related to each Unicode character. If a character is not yet coded, it will be printed as *missing glyph* symbol "□", also defined in the same file:
 ```
 static list<char> missing_glyph = {
   0b111110,     // █████.
