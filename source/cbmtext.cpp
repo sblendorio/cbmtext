@@ -17,7 +17,7 @@ void closeStream(istream* file);
 void printText(ostream& out, istream& in);
 string filterValidCharacters(string line, int line_count);
 char* singleChar(uint32_t c, char *code);
-char* glyph(std::list<char> chardef, char *code);
+char* glyph(list<char> chardef, char *code);
 char* translate(uint32_t c, char *code);
 bool isSpace(uint32_t c);
 bool isZeroWidth(uint32_t c);
@@ -81,7 +81,7 @@ char* singleChar(uint32_t c, char *code) {
 	return code;
 }
 
-char* glyph(std::list<char> chardef, char *code) {
+char* glyph(list<char> chardef, char *code) {
 	static int pow[] = {1, 2, 4, 8, 16, 32, 64, 128};
 	int k=0;
 	code[0]=8;
@@ -89,7 +89,7 @@ char* glyph(std::list<char> chardef, char *code) {
 		int p=pow[5-j];
 		char value = 0;
 		int i=0;
-		std::list<char>::iterator it;
+		list<char>::iterator it;
 		for (it = chardef.begin(); it != chardef.end() && i<7; ++it) {
 			int pixel = (*it & p);
 			value += pow[i] * (pixel ? 1 : 0);
@@ -123,7 +123,7 @@ istream* openStream(char* fileName) {
 
 void closeStream(istream* file) {
 	if (file == NULL) return;
-		if (ifstream* v = dynamic_cast<ifstream*>(file)) {
+	if (ifstream* v = dynamic_cast<ifstream*>(file)) {
 		v->close();
 		delete v;
 	}
