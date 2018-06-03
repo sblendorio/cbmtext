@@ -1,0 +1,46 @@
+Næringsstof (fødemiddel)
+
+Et næringsstof er et hvilket som helst stof, som ved indtagelse bidrager til
+en organismes metabolisme, funktion eller vækst. Der findes seks forskellige
+slags næringsstoffer, klassificeret som de, der giver energi til organismen og
+de, som på anden måde bidrager til, at de metaboliske processer i organismen
+kan forløbe.
+
+Αν η λεοντη μη εξικηται, την αλωπεκην προσαψον.
+Αλλα μεν Λευκων λεγει, αλλα δε Λευκωνος δνος φερει.
+
+- KALINKA SONG -
+-----------------
+Калинка, калинка, калинка моя!
+В саду ягода малинка, малинка моя!
+Ах, под сосною, под зеленою,
+Спать положите вы меня!
+Ай-люли, люли, ай-люли, люли,
+Спать положите вы меня.
+
+Полетів би-м на край світа
+---------------------------
+Полетів би-м на край світа,
+Як вітрець, що в полі літат,
+Гей, в америцький край.
+Лем жаль ми тя, моя хижо, (2)
+Солом’яна, жаль.
+Ой жаль ми вас, вівці сиві,
+Що-м плекав вас без три зимі,
+Гей, який ми вас жаль!
+Ще й жаль ми вас, рідні гори,
+І потоки, ліси, бори,
+Зеленії, жаль.
+
+Java code
+---------
+static int getPixel(BufferedImage bi, int x, int y) {
+    final int w = bi.getWidth();
+    final int h = bi.getHeight();
+
+    if (x >= w || y >= h || x < 0 || y < 0)
+        return 0;
+
+    final boolean pixel = bi.getRGB(x, y) != -1;
+    return pixel ? 1 : 0;
+}
