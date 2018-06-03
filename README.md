@@ -8,7 +8,7 @@ This utility outputs raw bytes for printing Unicode texts (UTF-8 encoded) on a [
   - [**cbmtext.c**](https://github.com/sblendorio/cbmtext/blob/master/source/cbmtext.c) - Main program
   - [**chardefs.h**](https://github.com/sblendorio/cbmtext/blob/master/source/chardefs.h) - Dot-matrix character definitions
   - [**utf8.h**](https://github.com/sblendorio/cbmtext/blob/master/source/utf8.h) - [**UTF8-CPP** library](http://utfcpp.sourceforge.net/), entry point
-    - **utf8** - [**UTF8-CPP** library](http://utfcpp.sourceforge.net/)
+  - **utf8** - [**UTF8-CPP** library](http://utfcpp.sourceforge.net/)
     - [**core.h**](https://github.com/sblendorio/cbmtext/blob/master/source/utf8/core.h) - part of the library
     - [**checked.h**](https://github.com/sblendorio/cbmtext/blob/master/source/utf8/checked.h) - part of the library
     - [**unchecked.h**](https://github.com/sblendorio/cbmtext/blob/master/source/utf8/unchecked.h) - part of the library
@@ -37,18 +37,14 @@ on macOS you can use a similar command (with the help of [Homebrew Package Manag
 
 ## Compiling ***cbmtext***
 Once you have **g++** installed, just enter the **"source"** directory and launch:
-
 `make`
-
 An executable file named **"cbmtext"** will be generated: it's ready to use.
 
 ## Using ***cbmtext***
 
 Synopsis:
-
 `cbmage <text file name>`
 `cbmage -`
-
 This is the basic syntax: it will simply read from the text file name (first case), or from standard input (second case, giving "-" as parameter) writing on *stdout* (so, the termainal window) the raw bytes that should be interpreted by the **MPS 803** printer. The input stream (file on disk or standard input) **must** be **UTF-8** encoded. The output must be redirected to the printer: let's see how.
 
 ## Let's use it with ***opencbm***
@@ -71,7 +67,6 @@ Commodore MPS 803 is a **80 columns** printer, so the text lines will be broken 
 
 ## Details: character definitions
 To print an international text on a CBM MPS 803, we have to mix text mode (for symbols already present in printer's ROM) and graphics mode (for **all** the other symbols). Those *new* symbols have been implemented as dot-matrix definitions in the header file [**chardefs.h**](https://github.com/sblendorio/cbmtext/blob/master/source/chardefs.h), in that way:
-
 ```
 {L'á', {
   0b001100,
@@ -82,7 +77,6 @@ To print an international text on a CBM MPS 803, we have to mix text mode (for s
   0b100100,
   0b011010 }},
 ```
-
 Literal binary constants are exactly the 6x7 human-readable bitmap representing the character (1 is for black, 0 for white). If for a particular glyph, a pre-defined character could be used, the syntax is the following:
 ```
 {L'ρ', {'P'}},
