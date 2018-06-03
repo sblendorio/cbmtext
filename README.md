@@ -71,7 +71,7 @@ Commodore MPS 803 is a **80 columns** printer, so the text lines will be broken 
     $ cat sample.txt | fold -w 80 | ./cbmtext - | cbmctrl write
     
 ## Details: character definitions
-To print an international text on a CBM MPS 803, we have to mix text mode (for pre-defined PETSCII characters in printer's ROM) and graphics mode (for **all** the other symbols). Those *new* symbols have been implemented as dot-matrix definitions in the header file [**chardefs.h**](https://github.com/sblendorio/cbmtext/blob/master/source/chardefs.h), in that way:
+To print an international text on a CBM MPS 803, we have to mix text mode (for pre-defined *PETSCII* characters in printer's ROM) and graphics mode (for **all** the other symbols). Those *new* symbols have been implemented as dot-matrix definitions in the header file [**chardefs.h**](https://github.com/sblendorio/cbmtext/blob/master/source/chardefs.h), in that way:
 ```
 {L'á', {
   0b001100,     // ..██..
