@@ -4,16 +4,16 @@ Print a Unicode UTF-8 encoded textfile from a modern PC with an old-fashioned **
 This utility outputs raw bytes for printing Unicode texts (UTF-8 encoded) on a [Commodore MPS 803](http://www.zimmers.net/cbmpics/p6serial3.html) compatible printer. It should be used with [**opencbm**](http://spiro.trikaliotis.net/opencbm) package by [Spiro Trikaliotis](http://spiro.trikaliotis.net/) to redirect the output to the printer, connected through a [XUM1541 cable](https://rdist.root.org/2009/01/21/introducing-xum1541-the-fast-c64-floppy-usb-adapter/), such as [ZoomFloppy](http://www.go4retro.com/products/zoomfloppy/).
 
 ## Contents of package
-- **source** - Source code in C
+- **source/** - Source code in C
   - [**cbmtext.cpp**](https://github.com/sblendorio/cbmtext/blob/master/source/cbmtext.cpp) - Main program
   - [**chardefs.h**](https://github.com/sblendorio/cbmtext/blob/master/source/chardefs.h) - Dot-matrix character definitions
   - [**utf8.h**](https://github.com/sblendorio/cbmtext/blob/master/source/utf8.h) - [**UTF8-CPP** library](http://utfcpp.sourceforge.net/), entry point
-  - **utf8** - [**UTF8-CPP** library](http://utfcpp.sourceforge.net/)
+  - **utf8/** - [**UTF8-CPP** library](http://utfcpp.sourceforge.net/)
     - [**core.h**](https://github.com/sblendorio/cbmtext/blob/master/source/utf8/core.h) - part of the library
     - [**checked.h**](https://github.com/sblendorio/cbmtext/blob/master/source/utf8/checked.h) - part of the library
     - [**unchecked.h**](https://github.com/sblendorio/cbmtext/blob/master/source/utf8/unchecked.h) - part of the library
-  - [**Makefile**](https://github.com/sblendorio/cbmtext/blob/master/source/Makefile) - Makefile
-- **binaries** - Precompiled executable files for different platforms
+  - [**Makefile**](https://github.com/sblendorio/cbmtext/blob/master/source/Makefile)
+- **binaries/** - Precompiled executable files for different platforms
   - **windows**/[**cbmtext.exe**](https://github.com/sblendorio/cbmtext/blob/master/binaries/windows/cbmtext.exe?raw=true) - for **Windows**
   - **macOS**/[**cbmtext**](https://github.com/sblendorio/cbmtext/blob/master/binaries/macOS/cbmtext?raw=true) - for **macOS**, 64 bit
   - **linux**/[**cbmtext**](https://github.com/sblendorio/cbmtext/blob/master/binaries/linux/cbmtext?raw=true) - for **Linux** (x86_64)
