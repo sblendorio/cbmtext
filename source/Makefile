@@ -10,4 +10,4 @@ CXX=g++
 CXXFLAGS=-std=c++11 -I.
 
 cbmtext: cbmtext.o
-	$(CXX) $(STATIC) -o cbmtext cbmtext.o $(CXXFLAGS)
+	$(CXX) $(STATIC) -o cbmtext cbmtext.o 
