@@ -5,7 +5,7 @@ This utility outputs raw bytes for printing Unicode texts (UTF-8 encoded) on a [
 
 ## Contents of package
 - **source** - Source code in C
-  - [**cbmtext.c**](https://github.com/sblendorio/cbmtext/blob/master/source/cbmtext.c) - Main program
+  - [**cbmtext.cpp**](https://github.com/sblendorio/cbmtext/blob/master/source/cbmtext.cpp) - Main program
   - [**chardefs.h**](https://github.com/sblendorio/cbmtext/blob/master/source/chardefs.h) - Dot-matrix character definitions
   - [**utf8.h**](https://github.com/sblendorio/cbmtext/blob/master/source/utf8.h) - [**UTF8-CPP** library](http://utfcpp.sourceforge.net/), entry point
   - **utf8** - [**UTF8-CPP** library](http://utfcpp.sourceforge.net/)
