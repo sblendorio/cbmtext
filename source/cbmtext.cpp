@@ -23,17 +23,17 @@ bool isSpace(uint32_t c);
 bool isZeroWidth(uint32_t c);
 
 int main(int argc, char* argv[]) {
-    usage(argc, argv);
-    istream* input = openStream(argv[1]);    
-    printText(cout, *input);
+	usage(argc, argv);
+	istream* input = openStream(argv[1]);    
+	printText(cout, *input);
 	closeStream(input);
 	return 0;
 }
 
 void printText(ostream& out, istream& in) {
 	char code[16];
-    string rawline;
-    unsigned line_count = 1;
+	string rawline;
+	unsigned line_count = 1;
 
 	while (getline(in, rawline)) {
 		string line = filterValidCharacters(rawline, line_count);
@@ -82,24 +82,24 @@ char* singleChar(uint32_t c, char *code) {
 }
 
 char* glyph(std::list<char> chardef, char *code) {
-  static int pow[] = {1, 2, 4, 8, 16, 32, 64, 128};
-  int k=0;
-  code[0]=8;
-  for (int j=0; j<6; j++) {
-    int p=pow[5-j];
-    char value = 0;
-    int i=0;
-    std::list<char>::iterator it;
-    for (it = chardef.begin(); it != chardef.end() && i<7; ++it) {
-        int pixel = (*it & p);
-        value += pow[i] * (pixel ? 1 : 0);
-        ++i;
-    }
-    code[++k] = value + 128;
-  }
-  code[++k]=15;
-  code[++k]=0;
-  return code;
+	static int pow[] = {1, 2, 4, 8, 16, 32, 64, 128};
+	int k=0;
+	code[0]=8;
+	for (int j=0; j<6; j++) {
+		int p=pow[5-j];
+		char value = 0;
+		int i=0;
+		std::list<char>::iterator it;
+		for (it = chardef.begin(); it != chardef.end() && i<7; ++it) {
+			int pixel = (*it & p);
+			value += pow[i] * (pixel ? 1 : 0);
+			++i;
+		}
+		code[++k] = value + 128;
+	}
+	code[++k]=15;
+	code[++k]=0;
+	return code;
 }
 
 string filterValidCharacters(string line, int line_count) {
@@ -115,7 +115,7 @@ istream* openStream(char* fileName) {
 	if (!strcmp("-", fileName)) return &cin;
 	ifstream* file = new ifstream(fileName);
 	if (!file->is_open()) {
-	    cerr << "Could not open " << fileName << endl;
+		cerr << "Could not open " << fileName << endl;
 		exit(2);
 	}
 	return file;
@@ -123,10 +123,10 @@ istream* openStream(char* fileName) {
 
 void closeStream(istream* file) {
 	if (file == NULL) return;
-    if (ifstream* v = dynamic_cast<ifstream*>(file)) {
-    	v->close();
-    	delete v;
-    }
+		if (ifstream* v = dynamic_cast<ifstream*>(file)) {
+		v->close();
+		delete v;
+	}
 }
 
 void usage(int argc, char* argv[]) {
