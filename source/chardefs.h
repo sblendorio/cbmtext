@@ -1,5 +1,6 @@
 #ifndef CHARDEFSHCBM
 #define CHARDEFSHCBM
+
 // Character definitions
 static list<char> missing_glyph = {
 	0b111110,
@@ -76,22 +77,6 @@ static unordered_map<uint32_t, list<char>> charmap = {
 	0b000100,
 	0b000000,
 	0b000000 }},
-{L'ß', {
-	0b001100,
-	0b010010,
-	0b010010,
-	0b011100,
-	0b010010,
-	0b010010,
-	0b101100 }},
-{L'ẞ', {
-	0b001100,
-	0b010010,
-	0b010010,
-	0b011100,
-	0b010010,
-	0b010010,
-	0b101100 }},
 
 // UNICODE, NON-ASCII
 {L'á', {
@@ -534,6 +519,22 @@ static unordered_map<uint32_t, list<char>> charmap = {
 	0b011100,
 	0b001000,
 	0b001000 }},
+{L'ß', {
+	0b001100,
+	0b010010,
+	0b010010,
+	0b011100,
+	0b010010,
+	0b010010,
+	0b101100 }},
+{L'ẞ', {
+	0b001100,
+	0b010010,
+	0b010010,
+	0b011100,
+	0b010010,
+	0b010010,
+	0b101100 }},
 
 // GREEK
 {L'Γ', {
