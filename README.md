@@ -3,11 +3,11 @@ Print a Unicode UTF-8 encoded textfile from a modern PC with an old-fashioned **
 ## Purpose
 This utility outputs raw bytes for printing Unicode texts (UTF-8 encoded) on a [Commodore MPS 803](http://www.zimmers.net/cbmpics/p6serial3.html) compatible printer. It should be used with [**opencbm**](http://spiro.trikaliotis.net/opencbm) package by [Spiro Trikaliotis](http://spiro.trikaliotis.net/) to redirect the output to the printer, connected through a [XUM1541 cable](https://rdist.root.org/2009/01/21/introducing-xum1541-the-fast-c64-floppy-usb-adapter/), such as [ZoomFloppy](http://www.go4retro.com/products/zoomfloppy/).
 
-Commodore MPS 803 natively has a *non-standard* ASCII variant called PETSCII, missing a lot of symbols like letters with accents, and including a few of non-standard graphic symbols:
+Commodore MPS 803 natively has a *non-standard* ASCII variant called [**PETSCII**](https://en.wikipedia.org/wiki/PETSCII), missing a lot of symbols like letters with accents, and including a few of non-standard graphic symbols:
 
 ![MPS 803 PETSCII Charset](./mps803charset.png)
 
-With **cbmtext**, the MPS 803 will be able to print modern text-files including those with international characters, like letters with diacritics and cyrillic alphabet (look at the bottom of this README for some pictures).
+With **cbmtext**, the MPS 803 will be able to print modern [**Unicode**](https://unicode.org/) text-files ([**UTF-8**](https://en.wikipedia.org/wiki/UTF-8) encoded) including those with international characters, like letters with diacritics and cyrillic alphabet (look at the bottom of this README for some pictures).
 ## Contents of package
 - **source/** - Source code in C
   - [**cbmtext.cpp**](https://github.com/sblendorio/cbmtext/blob/master/source/cbmtext.cpp) - Main program
