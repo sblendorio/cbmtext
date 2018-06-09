@@ -7,7 +7,7 @@ Commodore MPS 803 has natively a non-standard ASCII variant called PETSCII, miss
 
 ![MPS 803 PETSCII Charset](./mps803charset.png)
 
-With **cbmtext**, the MPS 803 will be able to print modern text-files including those with international characters, like letters with diacritics and cyrillic alphabet (see pictures at the bottom of this README).
+With **cbmtext**, the MPS 803 will be able to print modern text-files including those with international characters, like letters with diacritics and cyrillic alphabet (look at the bottom of this README for some pictures).
 ## Contents of package
 - **source/** - Source code in C
   - [**cbmtext.cpp**](https://github.com/sblendorio/cbmtext/blob/master/source/cbmtext.cpp) - Main program
