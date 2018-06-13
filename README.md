@@ -34,7 +34,7 @@ With **cbmtext**, the MPS 803 will be able to print modern [**Unicode**](https:/
 ## Install ***opencbm***
 To install [**opencbm**](http://spiro.trikaliotis.net/opencbm) you can use the installer from its website, or if you use a debian-based version of Linux, follow these instructions: [**http://debian.trikaliotis.net**](http://debian.trikaliotis.net)
 
-on macOS you can use this command (with the help of [Homebrew Package Manager](https://brew.sh/)):
+On **macOS** you can use this command (with the help of [Homebrew Package Manager](https://brew.sh/)):
 
 `brew install opencbm`
 
