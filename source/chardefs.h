@@ -13,6 +13,14 @@ static list<char> missing_glyph = {
 };
 
 static unordered_map<uint32_t, list<char>> charmap = {
+{L'"', {
+	0b010100,
+	0b010100,
+	0b010100,
+	0b000000,
+	0b000000,
+	0b000000,
+	0b000000 }},
 {L'\\', {
 	0b100000,
 	0b100000,
@@ -319,6 +327,14 @@ static unordered_map<uint32_t, list<char>> charmap = {
 	0b111110,
 	0b100010,
 	0b100010 }},
+{ L'Ä', {
+	0b100010,
+	0b011100,
+	0b100010,
+	0b100010,
+	0b111110,
+	0b100010,
+	0b100010 } },
 {L'Â', {
 	0b011100,
 	0b000000,
