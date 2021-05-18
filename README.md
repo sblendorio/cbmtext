@@ -49,8 +49,8 @@ An executable file named **"cbmtext"** will be generated: it's ready to use.
 
 Synopsis:
 ```
-cbmage <text file name>
-cbmage -
+cbmtext <text file name>
+cbmtext -
 ```
 This is the basic syntax: it will read the text file (first case), or from standard input (second case, giving "-" as parameter) writing on *standard output* (so, the terminal window) the raw bytes that should be interpreted by the **MPS 803** printer.
 

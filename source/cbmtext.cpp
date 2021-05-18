@@ -52,7 +52,7 @@ void printText(ostream& out, istream& in) {
 
 char* translate(uint32_t c, char *code) {
 	if (isSpace(c)) c = 32;
-	if (c >= 32 && c <= 127) {
+	if (c >= 32 && c <= 127) { // print doublequote as symbol
 		if (c >= 'A' && c <= 'Z') return singleChar(tolower(c), code);
 		if (c >= 'a' && c <= 'z') return singleChar(toupper(c), code);
 		list<char> chardef = charmap[c];
